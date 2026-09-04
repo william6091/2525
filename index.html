@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Are You a Real Programmer? 😂</title>
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding-top: 80px;
+        }
 
+        button {
+            background: #00ff88;
+            border: none;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background: #00cc6a;
+        }
+
+        #result {
+            font-size: 28px;
+            margin-top: 30px;
+            color: #00ff88;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>💻 Are You A Real Programmer? 😂</h1>
+
+    <h2 id="question">Kya tumne kabhi code copy-paste kiya hai?</h2>
+
+    <button onclick="answer()">YES 😎</button>
+    <button onclick="answer()">NO 🤥</button>
+
+    <div id="result"></div>
+
+    <script>
+        let score = 0;
+        let questions = 0;
+
+        function answer() {
+            score++;
+            questions++;
+
+            let q = document.getElementById("question");
+
+            if (questions == 1) {
+                q.innerHTML = "Kya tum Stack Overflow use karte ho? 😂";
+            }
+            else if (questions == 2) {
+                q.innerHTML = "Kya error dekh kar computer restart kiya hai? 💀";
+            }
+            else if (questions == 3) {
+                q.innerHTML = "Kya tumne kabhi 'Don't touch the code' kaha hai? 🤡";
+            }
+            else {
+                document.getElementById("question").innerHTML = "🎉 Test Complete!";
+                
+                document.getElementById("result").innerHTML =
+                    "Tumhara Programmer Score: " + score + "/4 😂<br><br>" +
+                    "🏆 Congratulations! Tum officially programmer ho!";
+            }
+        }
+    </script>
+
+</body>
+</html>
